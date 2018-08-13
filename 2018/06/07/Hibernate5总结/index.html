@@ -1,689 +1,644 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+    
+
+    
+
+    
 
 
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>No title | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="Hibernate5框架的总结 [TOC]  Hibernate的概述1.什么是Hibernate?Hibernate是一个持久层的ORM框架,对JDBC做了封装. ###2.什么是ORM? ORM:object relation mapping—对象关联映射 3.为什么使用Hibernate框架1.对JDBC做了轻量级封装 2.优秀的ORM实现,简化了DAO的编码 3.性能好,支持很多关系型数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
 <meta property="og:url" content="http://yoursite.com/2018/06/07/Hibernate5总结/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hibernate5框架的总结 [TOC]  Hibernate的概述1.什么是Hibernate?Hibernate是一个持久层的ORM框架,对JDBC做了封装. ###2.什么是ORM? ORM:object relation mapping—对象关联映射 3.为什么使用Hibernate框架1.对JDBC做了轻量级封装 2.优秀的ORM实现,简化了DAO的编码 3.性能好,支持很多关系型数据">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-07T02:55:04.157Z">
+<meta property="og:image" content="file:///C:/Users/coldwind/AppData/Local/Temp/ksohtml/wps46F8.tmp.jpg">
+<meta property="og:updated_time" content="2018-06-25T08:06:41.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="Hibernate5框架的总结 [TOC]  Hibernate的概述1.什么是Hibernate?Hibernate是一个持久层的ORM框架,对JDBC做了封装. ###2.什么是ORM? ORM:object relation mapping—对象关联映射 3.为什么使用Hibernate框架1.对JDBC做了轻量级封装 2.优秀的ORM实现,简化了DAO的编码 3.性能好,支持很多关系型数据">
+<meta name="twitter:image" content="file:///C:/Users/coldwind/AppData/Local/Temp/ksohtml/wps46F8.tmp.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hexo" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-
-
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/06/07/Hibernate5总结/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title> | Hexo</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+    <!-- custom head -->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body>
+    <div id="loading" class="active"></div>
 
-  
-  
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">John Doe</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-07T02:55:04.157Z" itemprop="datePublished" class="page-time">
+  2018-06-07
+</time>
+
+
+            
+        </h5>
+    </div>
+
     
-  
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+</header>
+
+
+<div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hibernate的概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-什么是Hibernate"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.什么是Hibernate?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-为什么使用Hibernate框架"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">3.为什么使用Hibernate框架</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的入门"><span class="post-toc-number">2.</span> <span class="post-toc-text">Hibernate的入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建项目-导入相应的jar包"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.创建项目,导入相应的jar包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-创建相应的数据库和表"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.创建相应的数据库和表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-编写POJO类"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.编写POJO类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-编写POJO对应的映射配置文件–xxx-hbm-xml"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.编写POJO对应的映射配置文件–xxx.hbm.xml</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-编写hibernate核心配置文件"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5.编写hibernate核心配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate相关API"><span class="post-toc-number">3.</span> <span class="post-toc-text">Hibernate相关API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Configuration"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Configuration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sessionFactory"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">sessionFactory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#session"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">session</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#session的crud"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">session的crud:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的持久化类"><span class="post-toc-number">4.</span> <span class="post-toc-text">Hibernate的持久化类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#持久化类的定义及编写规则"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">持久化类的定义及编写规则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#持久化类的定义"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">持久化类的定义:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#持久化类的编写规则"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">持久化类的编写规则:</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#持久化类的三种状态及相互转化"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">持久化类的三种状态及相互转化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的缓存和快照"><span class="post-toc-number">5.</span> <span class="post-toc-text">Hibernate的缓存和快照</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hibernate的缓存机制"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Hibernate的缓存机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hibernate的一级缓存"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">Hibernate的一级缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hibernate的二级缓存"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">Hibernate的二级缓存</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hibernate的快照"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Hibernate的快照</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#快照的定义"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">快照的定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#快照的原理"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">快照的原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的三种查询方式"><span class="post-toc-number">6.</span> <span class="post-toc-text">Hibernate的三种查询方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#QBC查询"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">QBC查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL查询"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">SQL查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HQL查询"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">HQL查询</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的映射关系"><span class="post-toc-number">7.</span> <span class="post-toc-text">Hibernate的映射关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hibernate中的一对多映射-如一个客户有多个联系人"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Hibernate中的一对多映射(如一个客户有多个联系人)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hibernate的多对多映射"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Hibernate的多对多映射</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hibernate的一对一映射"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Hibernate的一对一映射</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的5种检索方式"><span class="post-toc-number">8.</span> <span class="post-toc-text">Hibernate的5种检索方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hibernate的抓取策略"><span class="post-toc-number">9.</span> <span class="post-toc-text">Hibernate的抓取策略</span></a></li></ol>
+        </nav>
+    </aside>
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+
+<article id="post-Hibernate5总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-07 10:55:04" datetime="2018-06-07T02:55:04.157Z"  itemprop="datePublished">2018-06-07</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Hibernate5框架的总结</p>
+<p>[TOC]</p>
+<hr>
+<h2 id="Hibernate的概述"><a href="#Hibernate的概述" class="headerlink" title="Hibernate的概述"></a>Hibernate的概述</h2><h3 id="1-什么是Hibernate"><a href="#1-什么是Hibernate" class="headerlink" title="1.什么是Hibernate?"></a>1.什么是Hibernate?</h3><p>Hibernate是一个持久层的ORM框架,对JDBC做了封装.</p>
+<p>###2.什么是<strong>ORM</strong>?</p>
+<p>ORM:object relation mapping—对象关联映射</p>
+<h3 id="3-为什么使用Hibernate框架"><a href="#3-为什么使用Hibernate框架" class="headerlink" title="3.为什么使用Hibernate框架"></a>3.为什么使用Hibernate框架</h3><p>1.对JDBC做了轻量级封装</p>
+<p>2.优秀的ORM实现,简化了DAO的编码</p>
+<p>3.性能好,支持很多关系型数据库</p>
+<p>4.可扩展性强</p>
+<p>具体见–<a href="https://baike.baidu.com/item/Hibernate/206989?fr=aladdin" target="_blank" rel="noopener">Hibernate百度百科</a></p>
+<hr>
+<h2 id="Hibernate的入门"><a href="#Hibernate的入门" class="headerlink" title="Hibernate的入门"></a>Hibernate的入门</h2><h3 id="1-创建项目-导入相应的jar包"><a href="#1-创建项目-导入相应的jar包" class="headerlink" title="1.创建项目,导入相应的jar包"></a>1.创建项目,导入相应的jar包</h3><ul>
+<li>hibernate核心包</li>
+<li>日志记录包</li>
+<li>数据库驱动包</li>
+</ul>
+<h3 id="2-创建相应的数据库和表"><a href="#2-创建相应的数据库和表" class="headerlink" title="2.创建相应的数据库和表"></a>2.创建相应的数据库和表</h3><h3 id="3-编写POJO类"><a href="#3-编写POJO类" class="headerlink" title="3.编写POJO类"></a>3.编写POJO类</h3><ul>
+<li>普通的javaBean类</li>
+</ul>
+<h3 id="4-编写POJO对应的映射配置文件–xxx-hbm-xml"><a href="#4-编写POJO对应的映射配置文件–xxx-hbm-xml" class="headerlink" title="4.编写POJO对应的映射配置文件–xxx.hbm.xml"></a>4.编写POJO对应的映射配置文件–xxx.hbm.xml</h3><ul>
+<li style="list-style: none"><input type="checkbox"> 映射id主键</li>
+<li style="list-style: none"><input type="checkbox"> 映射其它属性</li>
+<li style="list-style: none"><input type="checkbox"> 映射级联属性(如多对一,一对多,多对多,一对一)</li>
+<li style="list-style: none"><input type="checkbox"> Hibernate的主键生成策略<ul>
+<li>native(自动按照方言来实现自增长)</li>
+<li>identity(mysql主键生成方式)</li>
+<li>sequence(oracle主键生成方式)</li>
+<li>assigned(自然主键–如身份证编号等等)</li>
+<li>uuid(字符串类型的id)</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-编写hibernate核心配置文件"><a href="#5-编写hibernate核心配置文件" class="headerlink" title="5.编写hibernate核心配置文件"></a>5.编写hibernate核心配置文件</h3><ul>
+<li><p>[ ] 配置数据源属性(例如url,driverclass等等)</p>
+</li>
+<li><p>[ ] 配置hibernate相关属性</p>
+<ul>
+<li><p>格式化sql</p>
+</li>
+<li><p>控制打印sql语句</p>
+</li>
+<li><p>Hibernate中设置与当前线程绑定的session的使用</p>
+<ul>
+<li>session对象的生命周期和本地线程绑定</li>
+<li>自动关闭,事务的开启关闭也随本地线程开启而开启,关闭而关闭</li>
+</ul>
+</li>
+<li><p>设置连接池</p>
+</li>
+<li><p>设置事务隔离级别</p>
+<p>read-uncommitted—2</p>
+<pre><code>    不能解决任何问题,安全性最低,性能最高
+read-committed-----4
+    sql-server,oracle默认级别
+repeatable-read----8
+    mysql默认级别
+serializable------16
+    能解决任何问题,性能最低,安全性最高
+</code></pre><p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 加载映射文件</li>
+</ul>
+<hr>
+<p>  ​</p>
+<h2 id="Hibernate相关API"><a href="#Hibernate相关API" class="headerlink" title="Hibernate相关API"></a>Hibernate相关API</h2><h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a><strong><em>Configuration</em></strong></h3><h3 id="sessionFactory"><a href="#sessionFactory" class="headerlink" title="sessionFactory"></a><strong><em>sessionFactory</em></strong></h3><h3 id="session"><a href="#session" class="headerlink" title="session"></a><strong><em>session</em></strong></h3><hr>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用hibernate.cfg.xml配置核心配置文件的做法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">/*第一种  和对应的类不在同一个包下</span></span><br><span class="line"><span class="comment">		Configuration configuration = new Configuration();</span></span><br><span class="line"><span class="comment">		configuration.addResource("com/itheima/domain/Customer.hbm.xml");*/</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">/*第二种   和对应的类在同一个包下</span></span><br><span class="line"><span class="comment">		Configuration configuration = new Configuration();</span></span><br><span class="line"><span class="comment">		configuration.addClass(Customer.class);*/</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第三种     第一步:获取核心配置文件(核心配置文件已经加载了映射文件,这是第三种(推荐的做法))</span></span><br><span class="line">        Configuration configuration = <span class="keyword">new</span> Configuration().configure();</span><br><span class="line">        <span class="comment">//获取sessionFactory  相当于JDBC的连接池</span></span><br><span class="line">        SessionFactory sessionFactory = configuration.buildSessionFactory();</span><br><span class="line">        <span class="comment">//通过sessionFactory获得session 相当于JDBC的连接</span></span><br><span class="line">        Session session = sessionFactory.openSession();</span><br><span class="line">        Transaction transaction = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//开启事务</span></span><br><span class="line">            transaction = session.beginTransaction();</span><br><span class="line">            <span class="comment">//操作对象</span></span><br><span class="line">            Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">            customer.setIndustry(<span class="string">"互联网行业"</span>);</span><br><span class="line">            customer.setLevel(<span class="string">"1"</span>);</span><br><span class="line">            customer.setMobile(<span class="string">"18888888888"</span>);</span><br><span class="line">            customer.setName(<span class="string">"马腾"</span>);</span><br><span class="line">            customer.setPhone(<span class="string">"021-88888"</span>);</span><br><span class="line">            customer.setSource(<span class="string">"网上搜查"</span>);</span><br><span class="line">            Serializable id = session.save(customer);</span><br><span class="line">            System.out.println(id);</span><br><span class="line">            <span class="comment">//事务提交</span></span><br><span class="line">            transaction.commit();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">//事务回滚</span></span><br><span class="line">            transaction.rollback();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="session的crud"><a href="#session的crud" class="headerlink" title="session的crud:"></a><strong><em>session的crud</em></strong>:</h3><ul>
+<li><p>save</p>
+</li>
+<li><p>delete</p>
+</li>
+<li><p>update</p>
+</li>
+<li><p>get(立即加载)</p>
+</li>
+<li><p>load(延迟加载)</p>
+<hr>
+<p>​</p>
+</li>
+</ul>
+<h2 id="Hibernate的持久化类"><a href="#Hibernate的持久化类" class="headerlink" title="Hibernate的持久化类"></a>Hibernate的持久化类</h2><h3 id="持久化类的定义及编写规则"><a href="#持久化类的定义及编写规则" class="headerlink" title="持久化类的定义及编写规则"></a>持久化类的定义及编写规则</h3><h4 id="持久化类的定义"><a href="#持久化类的定义" class="headerlink" title="持久化类的定义:"></a>持久化类的定义:</h4><p>定义:一个javaBean类对应着一个映射文件,与数据库表建立联系</p>
+<h4 id="持久化类的编写规则"><a href="#持久化类的编写规则" class="headerlink" title="持久化类的编写规则:"></a>持久化类的编写规则:</h4><p>1.不能用final修饰,不然无法通过代理类实现延迟加载<br>    2.提供私有属性,提供公益的get.set方法<br>    3.属性尽量用包装类型<br>    4.提供特定标识OID,与数据库表的主键对应<br>    5.提供无参构造,用来为hibernate提供反射</p>
+<h3 id="持久化类的三种状态及相互转化"><a href="#持久化类的三种状态及相互转化" class="headerlink" title="持久化类的三种状态及相互转化"></a>持久化类的三种状态及相互转化</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>瞬时态</th>
+<th>持久态</th>
+<th>脱管态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OID</td>
+<td>无</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>session管理</td>
+<td>无</td>
+<td>有</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><img src="file:///C:\Users\coldwind\AppData\Local\Temp\ksohtml\wps46F8.tmp.jpg" alt="mg"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Customer;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateDemo1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试hibernate实体类对象的状态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.OpenSession();</span><br><span class="line">        <span class="comment">//开启事务</span></span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line">        <span class="comment">//创建实体类</span></span><br><span class="line">        Customer customer = <span class="keyword">new</span> Customer();<span class="comment">//实体类对象的瞬时态,没有id,没有加入session管理</span></span><br><span class="line"></span><br><span class="line">        customer.setId(<span class="number">1L</span>);<span class="comment">//设置id,变为脱管态,有id,没有加入session管理</span></span><br><span class="line">        customer.setName(<span class="string">"李世民3"</span>);</span><br><span class="line">        customer.setPhone(<span class="string">"188888888"</span>);</span><br><span class="line">        customer.setIndustry(<span class="string">"唐朝"</span>);</span><br><span class="line">        customer.setLevel(<span class="string">"一等客户"</span>);</span><br><span class="line">        customer.setMobile(<span class="string">"66666666"</span>);</span><br><span class="line">        customer.setSource(<span class="string">"书"</span>);</span><br><span class="line">        session.save(customer);<span class="comment">//此时customer变为持久态,可以自动更新</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//事务提交</span></span><br><span class="line">        transaction.commit();</span><br><span class="line">        session.close();<span class="comment">//此时customer变成了脱管态</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试hibernate实体类对象的状态之间相互的转换</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">test02</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	<span class="comment">//开启事务</span></span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	<span class="comment">//创建实体类</span></span><br><span class="line">    	Customer customer = <span class="keyword">new</span> Customer();<span class="comment">//实体类对象的瞬时态,没有id,没有加入session管理</span></span><br><span class="line">    	</span><br><span class="line">    	customer.setId(<span class="number">5L</span>);<span class="comment">//当设置的id不存在的时候,此时customer为瞬时态:没有OID,没有加入session</span></span><br><span class="line">    	<span class="comment">//customer.setId(1L);//当设置的id存在的时候,此时customer为脱管态:有OID,没有加入session</span></span><br><span class="line">    	customer.setName(<span class="string">"张飞"</span>);</span><br><span class="line">    	customer.setIndustry(<span class="string">"三国"</span>);</span><br><span class="line">    	</span><br><span class="line">    	session.save(customer);<span class="comment">//调用save或者update此时customer变为持久态,可以自动更新</span></span><br><span class="line">    	<span class="comment">//saveOrUpdate方法:当customer为瞬时态则调用save方法,当customer为脱管态则调用update方法</span></span><br><span class="line">    	<span class="comment">//session.delete(customer);//customer直接从持久态变为瞬时态</span></span><br><span class="line">    	</span><br><span class="line">    	<span class="comment">//事务提交</span></span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();<span class="comment">//此时customer变成了脱管态</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试clear方法:清除session所有对象,将customer持久态转化为脱管态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">clear</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	</span><br><span class="line">    	Customer customer = session.get(Customer.class, <span class="number">2L</span>);<span class="comment">//持久态</span></span><br><span class="line">    	session.clear();<span class="comment">//清除session的所有对象</span></span><br><span class="line">    	System.out.println(customer);<span class="comment">//customer变为脱管态</span></span><br><span class="line">    	</span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试evict方法:清除session某个对象,将customer持久态转化为脱管态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">evict</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	</span><br><span class="line">    	Customer customer = session.get(Customer.class, <span class="number">2L</span>);<span class="comment">//持久态</span></span><br><span class="line">    	session.evict(customer);<span class="comment">//清除session的customer</span></span><br><span class="line">    	System.out.println(customer);<span class="comment">//customer变为脱管态</span></span><br><span class="line">    	</span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试:当对象为持久态的时候,可以自动更新</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">auto_Update</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	</span><br><span class="line">    	Customer customer = session.get(Customer.class, <span class="number">2L</span>);<span class="comment">//持久态</span></span><br><span class="line">    	customer.setName(<span class="string">"关羽"</span>);<span class="comment">//customer已经是持久态,不需要调用session的update,就能更改表,自动更新</span></span><br><span class="line">    	</span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试主键生成策略---increment  hibernate内部的自动增长机制,会先查询表中的MAX(id),然后插入数据</span></span><br><span class="line"><span class="comment">     * 缺点:线程不安全,多线程存储数据的时候会出现问题</span></span><br><span class="line"><span class="comment">     * 应用debug模式,两个线程同时添加数据,第一次可以添加成功,第二次就因为id一样就报错:Duplicate entry key 重复的主键error</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">increment</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.OpenSession();</span><br><span class="line">        <span class="comment">//开启事务</span></span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line">        <span class="comment">//创建实体类</span></span><br><span class="line">        Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">        customer.setName(<span class="string">"陆小凤"</span>);</span><br><span class="line"></span><br><span class="line">        session.save(customer);<span class="comment">//当保存数据的时候,会先查询数据库中Max(id),然后再加一,然后再添加进去</span></span><br><span class="line">        transaction.commit();</span><br><span class="line">        session.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试:测试主键生成策略 uuid,随机生成uuid格式的主键</span></span><br><span class="line"><span class="comment">     * 要求:持久化类的id主键为string类型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">UUID</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	<span class="comment">//开启事务</span></span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	<span class="comment">//创建实体类</span></span><br><span class="line">    	</span><br><span class="line">    	Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">    	customer.setName(<span class="string">"诸葛亮"</span>);<span class="comment">//得到4028a68163ac13970163ac13991d0000的uuid形式的id</span></span><br><span class="line">    	</span><br><span class="line">    	session.save(customer);</span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试:测试主键生成策略 assigned,即自然主键,自己手动设置个人信息唯一的id,如:身份证,如登录id+时间戳</span></span><br><span class="line"><span class="comment">     * 要求:持久化类的id主键为string类型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">assigned</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	Session session = HibernateUtils.OpenSession();</span><br><span class="line">    	<span class="comment">//开启事务</span></span><br><span class="line">    	Transaction transaction = session.beginTransaction();</span><br><span class="line">    	<span class="comment">//创建实体类</span></span><br><span class="line">    	</span><br><span class="line">    	Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">    	customer.setId(<span class="number">2018052921301515L</span>);</span><br><span class="line">    	customer.setName(<span class="string">"赵云"</span>);<span class="comment">//得到4028a68163ac13970163ac13991d0000的uuid形式的id</span></span><br><span class="line">    	</span><br><span class="line">    	session.save(customer);</span><br><span class="line">    	transaction.commit();</span><br><span class="line">    	session.close();</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Hibernate的缓存和快照"><a href="#Hibernate的缓存和快照" class="headerlink" title="Hibernate的缓存和快照"></a>Hibernate的缓存和快照</h2><h3 id="Hibernate的缓存机制"><a href="#Hibernate的缓存机制" class="headerlink" title="Hibernate的缓存机制"></a>Hibernate的缓存机制</h3><h4 id="Hibernate的一级缓存"><a href="#Hibernate的一级缓存" class="headerlink" title="Hibernate的一级缓存"></a>Hibernate的一级缓存</h4><p>第一次通过id向数据库查询,发送sql语句,然后将这个数据加载进缓存,之后的每一次访问这个数据就可以直接访问缓存来获得这个数据,不用发送sql语句查询数据库了(session未关闭的情况下).</p>
+<p>生命周期:是session的生命周期,session一关闭,一级缓存就消失</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Customer;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateDemo2</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 测试一级缓存的存在:</span></span><br><span class="line"><span class="comment">	 * 一级缓存:当第一次通过id向数据库查询数据时,hibernate会将id为key,对象为value存入session的缓存中</span></span><br><span class="line"><span class="comment">	 * 		   第二次查询这个id数据的时候,就直接向缓存中拿这个key相应的对象即可(hibernate性能优化的一个方式)</span></span><br><span class="line"><span class="comment">	 * 一级缓存的生命周期:当session关闭的时候,一级缓存就结束了</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">firstCache</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.OpenSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		Customer customer = session.get(Customer.class, <span class="number">2L</span>);<span class="comment">//向数据库发送了sql查询语句</span></span><br><span class="line">		System.out.println(customer);</span><br><span class="line">		Customer customer2 = session.get(Customer.class, <span class="number">2L</span>);<span class="comment">//没有发送sql语句,直接从一级缓存中获取</span></span><br><span class="line">		System.out.println(customer2);</span><br><span class="line">		</span><br><span class="line">		System.out.println(customer == customer2);<span class="comment">//打印出来为true,说明拿出来的对象是一样的</span></span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 测试一级缓存的快照区:快照，是数据在内存中的副本，是数据库中数据在内存中的映射。</span></span><br><span class="line"><span class="comment">	 * 当session加载了customer对象后,会为customer创建一个快照副本(快照区),当事务提交后(会刷出缓存)</span></span><br><span class="line"><span class="comment">	 * 会比对快照区和一级缓存区,然后来比对哪些属性变化,然后向数据库发送update更新数据</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">snapShot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.OpenSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		Customer customer = session.get(Customer.class, <span class="number">2L</span>);</span><br><span class="line">		customer.setName(<span class="string">"刘备2"</span>);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * session的生命周期和本地线程绑定:</span></span><br><span class="line"><span class="comment">	 * 在核心配置文件中配置:&lt;!-- 设置与当前线程绑定的session --&gt;</span></span><br><span class="line"><span class="comment">		&lt;property name="hibernate.current_session_context_class"&gt;thread&lt;/property&gt;</span></span><br><span class="line"><span class="comment">		这样一个线程结束,session会自动关闭,不用调用session.close手动关闭</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testThreadSession</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.getCurrentSession();<span class="comment">//另一个方法调用getCurrentSession,得到的是同一个session</span></span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		Customer customer = session.get(Customer.class, <span class="number">2L</span>);</span><br><span class="line">		customer.setName(<span class="string">"刘备3"</span>);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Hibernate的二级缓存"><a href="#Hibernate的二级缓存" class="headerlink" title="Hibernate的二级缓存"></a>Hibernate的二级缓存</h4><p><strong><em>sessionFactory</em></strong></p>
+<h3 id="Hibernate的快照"><a href="#Hibernate的快照" class="headerlink" title="Hibernate的快照"></a>Hibernate的快照</h3><h4 id="快照的定义"><a href="#快照的定义" class="headerlink" title="快照的定义"></a>快照的定义</h4><p>定义:快照，是数据在内存中的副本，是数据库中数据在内存中的映射</p>
+<h4 id="快照的原理"><a href="#快照的原理" class="headerlink" title="快照的原理"></a>快照的原理</h4><p>原理:当session缓存加载了一个对象的时候,会为这个对象的值类型复制存入一片快照区域,操作对象改变的时候只会改变session的缓存,不会改变快照区,当事务提交(刷出缓存)的时候,快照会和缓存去进行对比,如果不一样就会想数据库发送update语句,更新数据库变为缓存区一样的数据.</p>
+<h2 id="Hibernate的三种查询方式"><a href="#Hibernate的三种查询方式" class="headerlink" title="Hibernate的三种查询方式"></a>Hibernate的三种查询方式</h2><h3 id="QBC查询"><a href="#QBC查询" class="headerlink" title="QBC查询"></a>QBC查询</h3><h3 id="SQL查询"><a href="#SQL查询" class="headerlink" title="SQL查询"></a>SQL查询</h3><h3 id="HQL查询"><a href="#HQL查询" class="headerlink" title="HQL查询"></a>HQL查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Customer;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Criteria;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Query;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.SQLQuery;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.criterion.Restrictions;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateDemo3</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 测试HQL查询</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HQL</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/*//查询所有数据----HQL查询的都是对象,不是数据库的表,是通过查询对象反射到操作数据库表</span></span><br><span class="line"><span class="comment">		Query query = session.createQuery("from Customer");</span></span><br><span class="line"><span class="comment">		//返回装有数据的list</span></span><br><span class="line"><span class="comment">		List&lt;Customer&gt; list = query.list();</span></span><br><span class="line"><span class="comment">		for (Customer customer : list) &#123;</span></span><br><span class="line"><span class="comment">			System.out.println(customer);</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">	<span class="comment">/*	//条件查询</span></span><br><span class="line"><span class="comment">		Query query2 = session.createQuery("from Customer where name like ? and level=?");</span></span><br><span class="line"><span class="comment">		//设置HQL的参数</span></span><br><span class="line"><span class="comment">		query2.setParameter(0, "%刘%");</span></span><br><span class="line"><span class="comment">		query2.setParameter(1, "一等客户");</span></span><br><span class="line"><span class="comment">		List&lt;Customer&gt; list2 = query2.list();</span></span><br><span class="line"><span class="comment">		for (Customer customer : list2) &#123;</span></span><br><span class="line"><span class="comment">			System.out.println(customer);</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//分页查询----直接setFirstResult(角标)和setMaxResults(一页展示的数量)</span></span><br><span class="line">		Query query = session.createQuery(<span class="string">"from Customer"</span>);</span><br><span class="line">		query.setFirstResult(<span class="number">0</span>);</span><br><span class="line">		query.setMaxResults(<span class="number">2</span>);</span><br><span class="line">		List&lt;Customer&gt; list = query.list();</span><br><span class="line">		<span class="keyword">for</span> (Customer customer : list) &#123;</span><br><span class="line">			System.out.println(customer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 测试QBC查询:完全面对对象,不用写sql语句</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">QBC</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line"> 	    <span class="comment">/*//查询所有数据</span></span><br><span class="line"><span class="comment">		Criteria criteria = session.createCriteria(Customer.class);</span></span><br><span class="line"><span class="comment">		List&lt;Customer&gt; list = criteria.list();</span></span><br><span class="line"><span class="comment">		for (Customer customer : list) &#123;</span></span><br><span class="line"><span class="comment">			System.out.println(customer);</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//条件查询</span></span><br><span class="line">	    <span class="comment">/*Criteria criteria = session.createCriteria(Customer.class);</span></span><br><span class="line"><span class="comment">		//加入限制---即加入条件</span></span><br><span class="line"><span class="comment">		criteria.add(Restrictions.like("name", "刘"));</span></span><br><span class="line"><span class="comment">		criteria.add(Restrictions.eq("level", "一等客户"));</span></span><br><span class="line"><span class="comment">		List&lt;Customer&gt; list = criteria.list();</span></span><br><span class="line"><span class="comment">		for (Customer customer : list) &#123;</span></span><br><span class="line"><span class="comment">			System.out.println(customer);</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//分页查询</span></span><br><span class="line">		Criteria criteria = session.createCriteria(Customer.class);</span><br><span class="line">		criteria.setFirstResult(<span class="number">0</span>);</span><br><span class="line">		criteria.setMaxResults(<span class="number">2</span>);</span><br><span class="line">		List&lt;Customer&gt; list = criteria.list();</span><br><span class="line">		<span class="keyword">for</span> (Customer customer : list) &#123;</span><br><span class="line">			System.out.println(customer);</span><br><span class="line">		&#125;</span><br><span class="line">		transaction.commit();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 测试SQL查询:写sql语句查询数据库</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SQL</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//查询所有数据</span></span><br><span class="line">		SQLQuery sqlQuery = session.createSQLQuery(<span class="string">"select * from cst_customer"</span>);</span><br><span class="line">		List&lt;Object[]&gt; list = sqlQuery.list();<span class="comment">//返回的不是customer对象,而是object数组(数据库字段和值的数组)</span></span><br><span class="line">		<span class="keyword">for</span> (Object[] objects : list) &#123;</span><br><span class="line">			System.out.println(objects[<span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		SQLQuery sqlQuery2 = session.createSQLQuery(<span class="string">"select * from cst_customer"</span>);</span><br><span class="line">		sqlQuery2.addEntity(Customer.class);<span class="comment">//可以通过这个方法,将数据封装在customer,然后遍历打印出来</span></span><br><span class="line">		List&lt;Customer&gt; list2 = sqlQuery2.list();</span><br><span class="line">		<span class="keyword">for</span> (Customer customer : list2) &#123;</span><br><span class="line">			System.out.println(customer);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="Hibernate的映射关系"><a href="#Hibernate的映射关系" class="headerlink" title="Hibernate的映射关系"></a>Hibernate的映射关系</h2><h3 id="Hibernate中的一对多映射-如一个客户有多个联系人"><a href="#Hibernate中的一对多映射-如一个客户有多个联系人" class="headerlink" title="Hibernate中的一对多映射(如一个客户有多个联系人)"></a>Hibernate中的一对多映射(如一个客户有多个联系人)</h3><ol>
+<li>准备工作:创建表,创建持久化类,配置映射文件</li>
+<li>级联保存<ul>
+<li>保存客户,级联保存联系人(常用):在客户相对应的映射文件中的set标签加入属性cascade=”save-update”</li>
+<li>保存联系人,级联保存客户:在联系人相对应的映射文件中的Many-to-one标签加入属性cascade=”save-update”</li>
+</ul>
+</li>
+<li>级联删除<ul>
+<li>删除客户,级联保存联系人(常用):在客户相对应的映射文件中的set标签加入属性cascade=”delete”</li>
+<li>删除联系人,级联保存客户:在联系人相对应的映射文件中的Many-to-one标签加入属性cascade=”delete”</li>
+</ul>
+</li>
+<li>放弃外键维护权<pre><code>例子:改变联系人的客户
+起源:建立双向关系会出现多余的update语句,但是为了能够更好的操作客户和联系人,需要建立双向关系
+解决办法:一般由一的一方放弃外键维护权,这样既不会产生多余的uodate语句,也能建立双向关系
+</code></pre></li>
+</ol>
+<h3 id="Hibernate的多对多映射"><a href="#Hibernate的多对多映射" class="headerlink" title="Hibernate的多对多映射"></a>Hibernate的多对多映射</h3><p>类似一对多的情形</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Customer;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.LinkMan;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> coldwind</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateOneToManyTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试级联和导航的关系</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>   <span class="title">relativeObject</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">        customer.setCust_name(<span class="string">"张艺谋"</span>);</span><br><span class="line"></span><br><span class="line">        LinkMan linkMan1 = <span class="keyword">new</span> LinkMan();</span><br><span class="line">        linkMan1.setLkm_name(<span class="string">"范冰冰"</span>);</span><br><span class="line">        LinkMan linkMan2 = <span class="keyword">new</span> LinkMan();</span><br><span class="line">        linkMan2.setLkm_name(<span class="string">"李晨"</span>);</span><br><span class="line">        LinkMan linkMan3 = <span class="keyword">new</span> LinkMan();</span><br><span class="line">        linkMan3.setLkm_name(<span class="string">"李冰冰"</span>);</span><br><span class="line"></span><br><span class="line">        linkMan1.setCustomer(customer);</span><br><span class="line">        customer.getLinkMans().add(linkMan2);</span><br><span class="line">        customer.getLinkMans().add(linkMan3);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//发出insert语句的条数 :4条</span></span><br><span class="line">       <span class="comment">// session.save(linkMan1);</span></span><br><span class="line">        <span class="comment">//发出insert语句的条数 :3条</span></span><br><span class="line">        session.save(customer);</span><br><span class="line">        <span class="comment">//发出insert语句的条数:1条</span></span><br><span class="line">       <span class="comment">// session.save(linkMan2);</span></span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试:改变某个联系人的客户的时候,建立双向关系,会产生多余的sql语句,产生两条update语句</span></span><br><span class="line"><span class="comment">     * 但是开发中一般要建立双向关系:因为一个方法当以客户为参数的时候可以操作它的联系人</span></span><br><span class="line"><span class="comment">     *                                 一个方法以联系人为参数的时候可以操作它的客户</span></span><br><span class="line"><span class="comment">     * 为了既建立双向关系,又为了性能考虑不发送多余的update语句,一般都让一的那一方放弃主动权</span></span><br><span class="line"><span class="comment">     * 让一的一方放弃维护外键的关系,需要在一的一方即客户的一方映射文件中加入inverse=true,即可以被反转</span></span><br><span class="line"><span class="comment">     * 即主动放弃维护外键的权限</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>   <span class="title">inverseTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        Customer customer = session.get(Customer.class, <span class="number">4L</span>);</span><br><span class="line">        LinkMan linkMan = session.get(LinkMan.class, <span class="number">9L</span>);</span><br><span class="line">        linkMan.setCustomer(customer);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//配置客户的映射文件之后,这条代码其实是失效的,这样即使创建双方关系,也只发送一条update语句</span></span><br><span class="line">        customer.getLinkMans().add(linkMan);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Role;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.User;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hibernate中多对多的关系映射</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> coldwind</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateManyToManyTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试多对多关系映射的级联保存:不能创建双向关系,中间表的联合主键会产生重复</span></span><br><span class="line"><span class="comment">     * Duplicate:重复的意思</span></span><br><span class="line"><span class="comment">     * Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '1-2' for key 'PRIMARY'</span></span><br><span class="line"><span class="comment">         at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</span></span><br><span class="line"><span class="comment">         at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)</span></span><br><span class="line"><span class="comment">         at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)</span></span><br><span class="line"><span class="comment">         at java.lang.reflect.Constructor.newInstance(Constructor.java:423)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">manyToManyTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = <span class="keyword">new</span> User();</span><br><span class="line">        user1.setUserName(<span class="string">"张三丰3"</span>);</span><br><span class="line">        User user2 = <span class="keyword">new</span> User();</span><br><span class="line">        user2.setUserName(<span class="string">"长孙无忌3"</span>);</span><br><span class="line"></span><br><span class="line">        Role role1 = <span class="keyword">new</span> Role();</span><br><span class="line">        role1.setRoleName(<span class="string">"前台小姐姐3"</span>);</span><br><span class="line">        Role role2 = <span class="keyword">new</span> Role();</span><br><span class="line">        role2.setRoleName(<span class="string">"前台小哥哥3"</span>);</span><br><span class="line">        Role role3 = <span class="keyword">new</span> Role();</span><br><span class="line">        role3.setRoleName(<span class="string">"前台大叔叔3"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//角色和用户创立关系</span></span><br><span class="line">        role2.getUsers().add(user1);</span><br><span class="line">        role2.getUsers().add(user2);</span><br><span class="line">        role3.getUsers().add(user1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用户和角色创建关系</span></span><br><span class="line">        user1.getRoles().add(role2);</span><br><span class="line">        user1.getRoles().add(role3);</span><br><span class="line">        user2.getRoles().add(role2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//保存角色和用户</span></span><br><span class="line">        session.save(user1);</span><br><span class="line">        session.save(user2);</span><br><span class="line">        <span class="comment">/*session.save(role1);</span></span><br><span class="line"><span class="comment">        session.save(role2);</span></span><br><span class="line"><span class="comment">        session.save(role3);*/</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//提交事务</span></span><br><span class="line">        transaction.commit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 保存角色,级联保存用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">saveRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = <span class="keyword">new</span> User();</span><br><span class="line">        user1.setUserName(<span class="string">"张三丰2"</span>);</span><br><span class="line">        User user2 = <span class="keyword">new</span> User();</span><br><span class="line">        user2.setUserName(<span class="string">"长孙无忌2"</span>);</span><br><span class="line"></span><br><span class="line">        Role role1 = <span class="keyword">new</span> Role();</span><br><span class="line">        role1.setRoleName(<span class="string">"前台小姐姐2"</span>);</span><br><span class="line">        Role role2 = <span class="keyword">new</span> Role();</span><br><span class="line">        role2.setRoleName(<span class="string">"前台小哥哥2"</span>);</span><br><span class="line">        Role role3 = <span class="keyword">new</span> Role();</span><br><span class="line">        role3.setRoleName(<span class="string">"前台大叔叔2"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//角色和用户创立关系</span></span><br><span class="line">        role2.getUsers().add(user1);</span><br><span class="line">        role2.getUsers().add(user2);</span><br><span class="line">        role3.getUsers().add(user1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用户和角色创建关系</span></span><br><span class="line">        user1.getRoles().add(role2);</span><br><span class="line">        user1.getRoles().add(role3);</span><br><span class="line">        user2.getRoles().add(role2);</span><br><span class="line"></span><br><span class="line">        session.save(role1);</span><br><span class="line">        session.save(role2);</span><br><span class="line">        session.save(role3);</span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除角色,级联删除用户,必须持久态的对象才能删除</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">deleteRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        Role role1 = session.get(Role.class, <span class="number">16L</span>);</span><br><span class="line">        Role role2 = session.get(Role.class, <span class="number">17L</span>);</span><br><span class="line">        Role role3 = session.get(Role.class, <span class="number">18L</span>);</span><br><span class="line"></span><br><span class="line">        session.delete(role1);</span><br><span class="line">        session.delete(role2);</span><br><span class="line">        session.delete(role3);</span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除用户,级联删除角色,必须持久态的对象才能删除</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">deleteUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = session.get(User.class, <span class="number">9L</span>);</span><br><span class="line">        User user2 = session.get(User.class, <span class="number">10L</span>);</span><br><span class="line"></span><br><span class="line">        session.delete(user1);</span><br><span class="line">        session.delete(user2);</span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 给用户添加角色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">addRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = session.get(User.class, <span class="number">2L</span>);</span><br><span class="line">        Role role = session.get(Role.class, <span class="number">1L</span>);</span><br><span class="line"></span><br><span class="line">        role.getUsers().add(user1);</span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 给用户删除角色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">deleteRoleFromUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = session.get(User.class, <span class="number">2L</span>);</span><br><span class="line">        Role role = session.get(Role.class, <span class="number">1L</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//注意有没有哪一方放弃外键维护权</span></span><br><span class="line">        role.getUsers().remove(user1);</span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 给用户选择角色</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">selectRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        User user1 = session.get(User.class, <span class="number">2L</span>);</span><br><span class="line">        Role role1 = session.get(Role.class, <span class="number">1L</span>);</span><br><span class="line">        Role role2 = session.get(Role.class, <span class="number">2L</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//注意有没有哪一方放弃外键维护权</span></span><br><span class="line">        role2.getUsers().remove(user1);</span><br><span class="line">        role1.getUsers().add(user1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Hibernate的一对一映射"><a href="#Hibernate的一对一映射" class="headerlink" title="Hibernate的一对一映射"></a>Hibernate的一对一映射</h3><hr>
+<h2 id="Hibernate的5种检索方式"><a href="#Hibernate的5种检索方式" class="headerlink" title="Hibernate的5种检索方式"></a>Hibernate的5种检索方式</h2><p>1.通过OID检索:get、load</p>
+<p>2.通过对象导航检索</p>
+<p>3.HQL检索</p>
+<p>​    条件查询检索<br>        排序检索<br>        分页检索<br>        多表查询检索<br>        基本检索</p>
+<p>4.QBC检索</p>
+<p>​    基本检索<br>        分页检索<br>        多表查询检索<br>        条件查询检索<br>        排序检索<br>        离线查询检索</p>
+<p>5.SQL检索</p>
+<hr>
+<h2 id="Hibernate的抓取策略"><a href="#Hibernate的抓取策略" class="headerlink" title="Hibernate的抓取策略"></a>Hibernate的抓取策略</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.hibernate.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.Customer;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.domain.LinkMan;</span><br><span class="line"><span class="keyword">import</span> com.itheima.hibernate.utils.HibernateUtils;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Criteria;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Session;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.Transaction;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * hibernate的抓取策略:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> coldwind</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HibernateCatchTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试:抓取策略</span></span><br><span class="line"><span class="comment">     * 默认是懒加载</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line">        <span class="comment">//发送select语句,查询客户</span></span><br><span class="line">        Customer customer = session.get(Customer.class, <span class="number">2L</span>);</span><br><span class="line">        <span class="comment">//发送select语句,查询联系人表</span></span><br><span class="line">        System.out.println(customer.getLinkMans());</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *fetch	：控制查询语句的格式。</span></span><br><span class="line"><span class="comment">             select		：默认值，发送一条select语句查询关联对象（立即和延迟通过lazy属性决定）</span></span><br><span class="line"><span class="comment">             join			：发送一条迫切左外连接查询关联对象（lazy属性会忽略）</span></span><br><span class="line"><span class="comment">             subselect		：发送一条子查询查询其关联对象（立即和延迟通过lazy属性决定）</span></span><br><span class="line"><span class="comment">     lazy		：查询是否延迟的。</span></span><br><span class="line"><span class="comment">             true			：默认值，延迟加载。</span></span><br><span class="line"><span class="comment">             false			：不支持延迟加载，即立即加载。</span></span><br><span class="line"><span class="comment">             extra			：极其懒惰</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            将customer映射文件的set的fetch属性改为join</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchTest02</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//join：发送一条迫切左外连接查询关联对象（lazy属性会忽略）</span></span><br><span class="line">        Customer customer = session.get(Customer.class, <span class="number">3L</span>);</span><br><span class="line">        System.out.println(customer.getLinkMans());</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  将customer映射文件的set的fetch属性改为subselect(发送联合查询语句)(是否立即和lazy的配置有关)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchTest03</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//subselect(发送子查询(嵌套查询)语句)</span></span><br><span class="line">        Customer customer = session.get(Customer.class, <span class="number">4L</span>);</span><br><span class="line">        System.out.println(customer.getLinkMans());</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查询客户批量抓取联系人</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchTest04</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line">        Criteria criteria = session.createCriteria(Customer.class);</span><br><span class="line">        List&lt;Customer&gt; list = criteria.list();</span><br><span class="line">        <span class="keyword">for</span> (Customer customer : list) &#123;</span><br><span class="line">            System.out.println(customer.getCust_name());</span><br><span class="line">            <span class="keyword">for</span> (LinkMan linkMan : customer.getLinkMans()) &#123;</span><br><span class="line">                System.out.println(linkMan.getLkm_name());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        transaction.commit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchTest05</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Session session = HibernateUtils.getCurrentSession();</span><br><span class="line">        Transaction transaction = session.beginTransaction();</span><br><span class="line">        <span class="comment">// 查询所有客户</span></span><br><span class="line">        List&lt;LinkMan&gt; list = session.createQuery(<span class="string">"from LinkMan"</span>).list();</span><br><span class="line">        <span class="keyword">for</span> (LinkMan linkMan : list) &#123;</span><br><span class="line">            System.out.println(<span class="string">"联系人的名称:"</span>+linkMan.getLkm_name());</span><br><span class="line">            System.out.println(<span class="string">"客户的名称:"</span>+linkMan.getCustomer().getCust_name());</span><br><span class="line">        &#125;</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-25T08:06:41.056Z" itemprop="dateUpdated">2018-06-25 16:06:41</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/06/07/Hibernate5总结/" target="_blank" rel="external">http://yoursite.com/2018/06/07/Hibernate5总结/</a>
+        
     </div>
     
-  </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="John Doe">
+            John Doe
+        </a>
+    </footer>
+</blockquote>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
 </div>
 
 
 
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-  </li>
+        <div class="post-footer">
+            
 
-      
-      
-    </ul>
-  
-
-  
+            
+<div class="page-share-wrap">
     
 
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/07/Hibernate5总结/&title=Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/07/Hibernate5总结/&title=Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/07/Hibernate5总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/2018/06/07/Hibernate5总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/07/Hibernate5总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/04/PageName/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PageName</h4>
+      </a>
+    </div>
   
 </nav>
 
 
 
-  
-
-
-
-</div>
-    </header>
-
     
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
 
-  
 
-  
-  
-  
 
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/Hibernate5总结/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
 
-    
-      <header class="post-header">
 
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-06-07 10:55:04" itemprop="dateCreated datePublished" datetime="2018-06-07T10:55:04+08:00">2018-06-07</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/06/04/PageName/" rel="next" title="PageName">
-                <i class="fa fa-chevron-left"></i> PageName
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
         </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">John Doe</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
             </div>
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
+        </label>
         
-      </div>
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>John Doe &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
     </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
-  
 
-  
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/07/Hibernate5总结/&title=《No title》 — Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/07/Hibernate5总结/&title=《No title》 — Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/07/Hibernate5总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Hexo&url=http://yoursite.com/2018/06/07/Hibernate5总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/07/Hibernate5总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGElEQVR42u3aQZLbMAwEQP//0841h1ieAZWtFdk8uco2ydYBBQh4veL1/mt9+vb6958+56fcsDAwMB7LeF+ulQM+7XC9f/Kvf9wEAwPjAEZyify6bWCd7YCBgYFxvXUUBONg2j4+DAwMjJzRXjQHY2BgYMyK2OuXa23imDNursUxMDAeyJi9OPuZz/+lv4GBgfEoxrtc7fF5srh0KwwMjK0ZeYDL07L1NLG9DwYGxt6MWUl5V1bW7v+RioGBsTXj+otZC3N9n/YhYmBg7M1IjkwCZdvyTFLDIg3FwMA4jJEXnyvtxtmgxlIVjoGB8VjG+lDXva/qcmRxDAYGxsMZ7dazULs+Rvbl9RwGBsYBjLaknA1htI3PomGAgYGxNWMlTcyps98n7dIbsl0MDIxfz0gC2awybsNx20LAwMA4h9Ee8CrXekO0mBnBwMDYmpEcvx40Z03TJLnEwMDAaBsD+ZH37oaBgbE3Iy848yGM9nHMHgEGBgZGvnU+WrFeGH+pxTEwMI5hDPufJTgP7lEgxsDAOICR/K0Nr+0wR/toMDAwTmC8y5WHxfUCNR/7wMDA2JsxS/LakrUtYtcTRwwMjP0YbZDNg92sAB6mjxgYGAcwZoGvHUJdT/I+/hIDAwPj1uDbnv6jARcDA+MYRp5czlLML/0NDAyMTRlJEduOjuVBuS1ZMTAwTmMslY6jA9pR1xkVAwNjC8YfP5V0cnl8GZAAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
